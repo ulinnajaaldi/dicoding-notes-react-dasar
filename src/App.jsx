@@ -27,6 +27,7 @@ const App = () => {
 
   const addNote = (e) => {
     e.preventDefault();
+    e.stopPropagation();
     if (!title || !body) {
       toastNotify({
         type: "error",
@@ -79,13 +80,13 @@ const App = () => {
   return (
     <>
       <Navbar {...{ search, setSearch }} />
-      <main className="container mx-auto my-10">
+      <main className="container my-10">
         <AddNote
           {...{ title, setTitle, body, setBody, maxLengthTitle, addNote }}
         />
 
-        <h1 className="mb-5 text-2xl font-bold">Catatan Aktif</h1>
-        <div className="grid grid-cols-3 gap-4">
+        <h1 className="mb-5 text-xl font-bold lg:text-2xl">Catatan Aktif</h1>
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
           {filterActiveNotes.length > 0 ? (
             filterActiveNotes.map((note) => (
               <Card
@@ -102,8 +103,10 @@ const App = () => {
           )}
         </div>
 
-        <h1 className="mb-5 mt-10 text-2xl font-bold">Catatan Arsip</h1>
-        <div className="grid grid-cols-3 gap-4">
+        <h1 className="mb-5 mt-10 text-xl font-bold lg:text-2xl">
+          Catatan Arsip
+        </h1>
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
           {filterArchivedNotes.length > 0 ? (
             filterArchivedNotes.map((note) => (
               <Card

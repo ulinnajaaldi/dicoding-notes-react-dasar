@@ -7,9 +7,9 @@ const AddNote = ({
   addNote,
 }) => {
   return (
-    <section className="mb-10 flex flex-col items-center">
-      <h2 className="mb-5 text-2xl font-bold">Tambah Catatan</h2>
-      <form className="flex w-[50%] flex-col gap-4">
+    <section className="flex flex-col items-center py-10">
+      <h2 className="mb-5 text-xl font-bold lg:text-2xl">Tambah Catatan</h2>
+      <form className="flex w-full flex-col gap-4 md:w-[80%] lg:w-[50%]">
         <div className="w-full">
           <input
             id="title"
