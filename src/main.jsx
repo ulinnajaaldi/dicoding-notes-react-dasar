@@ -12,12 +12,12 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       position="bottom-right"
       autoClose={3000}
       hideProgressBar
-      newestOnTop={false}
+      newestOnTop
       closeOnClick
       rtl={false}
-      pauseOnFocusLoss={false}
-      draggable
-      pauseOnHover
+      pauseOnFocusLoss
+      draggable={false}
+      pauseOnHover={false}
       theme="light"
     />
   </React.StrictMode>,
